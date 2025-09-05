@@ -50,6 +50,7 @@ public class Flashbang : LightSource
     public void Release()
     {
         transform.position = pistol.transform.position;
+        transform.localScale = Vector3.one*2;
         active = false;
         gameObject.SetActive(false);
     }
@@ -60,7 +61,7 @@ public class Flashbang : LightSource
         DOTween.To(() => outerRadius, x => lightComponent.pointLightOuterRadius = x, outerRadius * 10, 0.5f).SetEase(Ease.OutExpo).OnComplete(Light);
         DOTween.To(() => outerRadius*10, x => lightComponent.pointLightOuterRadius = x, outerRadius, 0.5f).SetEase(Ease.InExpo).SetDelay(1.5f);
         yield return new WaitForSeconds(3);
-        Release();
+        transform.DOScale(Vector3.zero, 0.5f).SetEase(Ease.InFlash).OnComplete(Release);
     }
     public void Light()
     {

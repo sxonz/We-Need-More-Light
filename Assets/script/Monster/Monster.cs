@@ -28,7 +28,6 @@ public abstract class Monster : Entity
         hpManager = GetComponent<HPManager>();
         hpManager.SetStats(hp,block);
         player = GameObject.FindWithTag("Player");
-        checkRadius = 5;
         AnotherStart();
     }
 
