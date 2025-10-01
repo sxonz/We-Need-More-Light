@@ -39,11 +39,11 @@ public class Move : MonoBehaviour
         else
             anim.SetBool("iswalk", false);
 
-        Vector2 pos = transform.position;
-        pos += Vector2.right * x * moveSpeed * Time.deltaTime;
-        transform.position = pos;
-    }
+        transform.Translate(new Vector2(x * moveSpeed, 0) * Time.deltaTime);
 
+
+
+    }
     public bool IsFlip()
     {
         return isflip;

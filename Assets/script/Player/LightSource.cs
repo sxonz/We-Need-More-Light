@@ -4,6 +4,7 @@ using UnityEngine.Rendering.Universal;
 public class LightSource : MonoBehaviour
 {
     public Light2D lightComponent;
+    public Collider2D colliderComponent;
     [SerializeField] private LayerMask targetLayers = -1;
     [SerializeField] private int rayCount = 30;
 
@@ -24,17 +25,23 @@ public class LightSource : MonoBehaviour
 
             foreach(RaycastHit2D hit in hits)
             {
-
                 if (hit.collider != null)
                 {
-                    if (objects.Contains(hit.collider.gameObject))
+                    GameObject g = hit.collider.gameObject;
+                    if (objects.Contains(g) || g == this.gameObject)
                         continue;
                     objects.Add(hit.collider.gameObject);
-                    Debug.Log($"Hit: {hit.collider.name} at distance: {hit.distance}");
+                    Debug.Log($"Hit: {hit.collider.name} at distance: {hit.distance}"); 
                 }
             }
         }
 
         return new List<GameObject>(objects);
+    }
+    protected virtual List<GameObject> ColliderLighting()
+    {
+        List<GameObject> objects = new();
+
+        return objects;
     }
 }

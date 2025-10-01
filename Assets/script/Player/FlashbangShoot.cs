@@ -8,6 +8,7 @@ public class Flashbangshoot : MonoBehaviour {
     Flashbang fb;
     public float force;
     public bool isCool = false;
+    public float cooltime;
     public void Bang()
     {
         if (flash == null)
@@ -23,13 +24,13 @@ public class Flashbangshoot : MonoBehaviour {
         {
             fb.Shoot();
             isCool = true;
-            StartCoroutine(Wait());
+            StartCoroutine(Wait(cooltime));
         }
         
     }
-    public IEnumerator Wait()
+    public IEnumerator Wait(float second)
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(second);
         isCool = false;
     }
 }

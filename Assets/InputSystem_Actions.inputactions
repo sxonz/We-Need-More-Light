@@ -1012,6 +1012,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Lazer",
+                    "type": "Button",
+                    "id": "35ad7a19-2fad-4f32-a050-f5a9ca0a4691",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ring",
+                    "type": "Button",
+                    "id": "b853a778-cc14-441a-be3a-1a672a170254",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1045,6 +1063,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Flashbang",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6f693dbc-1a56-432b-b5ba-8d2d2c9cc139",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Lazer",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "33342a3c-fe9a-4af3-b090-2170a68a5f5a",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ring",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

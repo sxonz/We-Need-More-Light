@@ -10,6 +10,10 @@ enum Effect
 }
 public class Entity : MonoBehaviour
 {
+
+    protected Rigidbody2D rigidComponent;
     public int[] remainTime = new int[(int)Effect.EffectCount];
     public int[] amount = new int[(int)Effect.EffectCount];
+
+
 }

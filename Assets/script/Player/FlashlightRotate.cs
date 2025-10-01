@@ -1,10 +1,10 @@
+using System;
 using UnityEngine;
 
 public class FlashlightRotate : MonoBehaviour
 {
     public GameObject offset;
     public Move move;
-
     void Update()
     {
         Vector3 mouseScreenPos = Input.mousePosition;

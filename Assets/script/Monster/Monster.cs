@@ -23,19 +23,26 @@ public abstract class Monster : Entity
     protected HPManager hpManager;
     protected int checkRadius;
     protected GameObject player;
+    protected Animator anim;
+    protected bool isLive;
     private void Start()
     {
         hpManager = GetComponent<HPManager>();
         hpManager.SetStats(hp,block);
         player = GameObject.FindWithTag("Player");
+        anim = GetComponent<Animator>();
         AnotherStart();
     }
-
     protected abstract void UpdateState();
     protected abstract void Move();
     protected abstract void AnimManagement();
     protected abstract void Death();
+    public abstract void HitByLight(int damage);
     protected virtual void AnotherStart()
+    {
+        
+    }
+    public virtual void Stun(float time)
     {
 
     }

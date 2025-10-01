@@ -1,7 +1,9 @@
 using UnityEngine;
 public class HPManager : MonoBehaviour
 {
+    [SerializeField]
     int maxHp;
+    [SerializeField]
     int currentHp;
     int block;
     public int MaxHP => maxHp;
